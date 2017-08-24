@@ -1,0 +1,7 @@
+{
+  "name": "dlp-cloudfunction",
+  "version": "0.0.1",
+  "dependencies": {
+    "@google-cloud/dlp": "^0.1.3"
+  }
+}
