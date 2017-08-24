@@ -4,8 +4,8 @@ Data Loss Preventation (DLP) - Cloud Function Demo
 Inspect or Redact data, this can be text or images.
 
 Find more info on all data types etc, check these links:
-* https://cloud.google.com/dlp/docs/infotypes-categories
-* https://cloud.google.com/dlp/docs/likelihood
+. https://cloud.google.com/dlp/docs/infotypes-categories
+. https://cloud.google.com/dlp/docs/likelihood
 
 This demo, demonstrates the DLP API with text strings.
 But it's also possible to read text or image files from local filesystems,
@@ -14,7 +14,7 @@ Instead of streaming the textual data into the API, you specify location and con
 information in your API call.
 
 Please see this guide:
-* https://cloud.google.com/dlp/docs/inspecting-storage
+. https://cloud.google.com/dlp/docs/inspecting-storage
 
 Quick Start
 -------------------------------------------------------------------------------
@@ -31,17 +31,17 @@ Quick Start
 
     Specify the following:
 
-    Name: `dlp-inspect` (or `dlp-redact`)
-    Region: `us-central1`
-    Memory: `256 MB`
-    Timeout: `60 sec`
-    Trigger: `HTTP`
+        Name: **dlp-inspect** (or **dlp-redact**)
+        Region: **us-central1**
+        Memory: **256 MB**
+        Timeout: **60 sec**
+        Trigger: **HTTP**
 
-#. In the inline editor copy the contents of *inspect.js* or *redact.js* in the `index.js` tab.
+#. In the inline editor copy the contents of **inspect.js** or **redact.js** in the `index.js` tab.
 
     This is the JavaScript / Node.js code, which will run an HTTP Express function.
 
-#. In the inline editor copy the contents of *package.json* in the `package.json` tab.
+#. In the inline editor copy the contents of **package.json** in the `package.json` tab.
 
     This is the npm package.json file. Which loads the DLP Google Cloud package.
 

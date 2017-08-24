@@ -37,12 +37,12 @@ Setup Google Cloud
 Authentication
 ++++++++++++++
 
-Authentication is typically done through `Application Default Credentials`_,
+Authentication is typically done through `Application Default Credentials`,
 which means you do not have to change the code to authenticate as long as
 your environment has credentials. You have a few options for setting up
 authentication:
 
-#. When running locally, use the `Google Cloud SDK`_
+#. When running locally, use the `Google Cloud SDK`
 
     .. code-block:: bash
 
@@ -76,6 +76,6 @@ authentication:
 Install Dependencies
 ++++++++++++++++++++
 
-#. Install `node`_ and `npm`_ if you do not already have them.
+#. Install `node` and `npm` if you do not already have them.
 
 #. See the `readme.txt` file for descriptions on how to run each example.
