@@ -33,13 +33,9 @@ const transcribeAudio = function(uri){
             getTranslation(text), 
             getSentiment(text), 
             saveTextBQ(text)]
-        ).then(values => { 
-            console.log("FINAL RESULTS");
-            console.log(arguments);
-            for(key in arguments){
-                console.log(key);
-                console.log(arguments[key].results[0].items[0].value);
-            }
+        ).then((vals) => {
+            console.log(vals);
+            vals.map(response => console.log(response));
         }).catch(function(err) {
             throw err;
         }); 
