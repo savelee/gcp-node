@@ -1,0 +1,77 @@
+{
+  "id": "e1ed289e-498d-4b5f-bf1b-0910292fd1d6",
+  "name": "channel",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "Nederland 1",
+      "synonyms": [
+        "Nederland 1",
+        "Ned 1"
+      ]
+    },
+    {
+      "value": "Nederland 2",
+      "synonyms": [
+        "Nederland 2",
+        "Ned 2"
+      ]
+    },
+    {
+      "value": "Nederland 3",
+      "synonyms": [
+        "Nederland 3",
+        "Ned 3"
+      ]
+    },
+    {
+      "value": "RTL 4",
+      "synonyms": [
+        "RTL 4",
+        "rtl4"
+      ]
+    },
+    {
+      "value": "RTL5",
+      "synonyms": [
+        "RTL5",
+        "rtl5"
+      ]
+    },
+    {
+      "value": "RTL 7",
+      "synonyms": [
+        "RTL 7",
+        "rtl7"
+      ]
+    },
+    {
+      "value": "RTL 8",
+      "synonyms": [
+        "RTL 8",
+        "rtl8"
+      ]
+    },
+    {
+      "value": "SBS 6",
+      "synonyms": [
+        "SBS 6",
+        "sbs6"
+      ]
+    },
+    {
+      "value": "MTV",
+      "synonyms": [
+        "MTV"
+      ]
+    },
+    {
+      "value": "channel",
+      "synonyms": [
+        "channel"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": false
+}

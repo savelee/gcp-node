@@ -1,0 +1,51 @@
+{
+  "userSays": [
+    {
+      "id": "91a2fb3d-44ea-4cfd-8e9a-68a2cde361ff",
+      "data": [
+        {
+          "text": "What\u0027s on "
+        },
+        {
+          "text": "channel",
+          "alias": "channel",
+          "meta": "@channel",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "24677f36-05e3-41c6-bf57-2f125022f876",
+  "name": "What is on channel",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "GET_BY_CHANNEL",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@channel",
+          "name": "channel",
+          "value": "$channel"
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {}
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

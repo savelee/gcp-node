@@ -1,0 +1,14 @@
+{
+   "name": "my-tvguide-agent",
+   "description": "Build the TV Guide conversation agent for the Conversation Engine.",
+   "version": "1.0.0",
+   "license": "Apache-2.0",
+   "author": "Google Inc.",
+   "engines": {
+       "node": "~6.11"
+   },
+   "dependencies": {
+       "request": "^2.81.0",
+       "actions-on-google": "^1.2.1"
+   }
+}
