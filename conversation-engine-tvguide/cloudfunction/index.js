@@ -3,7 +3,7 @@
 process.env.DEBUG = 'actions-on-google:*';
 
 const request = require('request');
-const Assistant = require('actions-on-google').ApiAiAssistant;
+const Assistant = require('actions-on-google').ApiAiApp;
 
 var CHANNELS = new Map([
    ["Nederland 1", 1],
