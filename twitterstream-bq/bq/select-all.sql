@@ -1,4 +1,2 @@
-SELECT text, party, score
+SELECT text, score
 FROM mydataset.mytable
-
-
