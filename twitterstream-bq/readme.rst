@@ -32,6 +32,7 @@ Quick Start
 #. Install all the nodejs packages
 
     .. code-block:: bash
+
         npm install
 
 
@@ -49,6 +50,7 @@ Quick Start
     It should have the following contents:
 
     .. code-block:: bash
+
         GCLOUD_PROJECT=<my cloud project id>
         GCLOUD_KEY_FILE=</path/to/service_account.json>
         TWITTER_SEARCH_TERMS=<query1,hashtag1,query2,query3>
@@ -77,7 +79,7 @@ Quick Start
 #. (optional) Modify the Dataset and Table name:
 
     .. code:: javascript
-    
+
         //Make use of a dataset called: mydataset
         const dataset = bq.dataset('mydataset');
         //Make use of a BigQuery table called: mytable
@@ -87,6 +89,7 @@ Quick Start
 #. Run the demo
 
     .. code-block:: bash
+    
         npm start
 
 #. Navigate to BigQuery
