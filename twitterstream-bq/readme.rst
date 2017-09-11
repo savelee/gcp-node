@@ -69,13 +69,13 @@ Quick Start
     It needs to be comma seperated, for example: TWITTER_QUERY=query1,hashtag1,query2,query3
     since *lib/twitter.js* reads it like:
 
-    ```js
+    ```javascript
     const search_terms = process.env.TWITTER_SEARCH_TERMS.split(',');
     ```
 
 #. (optional) Modify the Dataset and Table name:
 
-    ```js
+    ```
     //Make use of a dataset called: mydataset
     const dataset = bq.dataset('mydataset');
     //Make use of a BigQuery table called: mytable
