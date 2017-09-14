@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  div(class="screener")
+    h1 Speech to Text Demo
+    a(class="waves-effect waves-light btn" onclick="startRecording()") Start Recording
+    a(class="waves-effect waves-light btn" onclick="stopRecording()") Stop Recording
+
+  script(src="js/recorder.js")
+
+
+  textarea#textblock
