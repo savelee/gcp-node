@@ -101,12 +101,29 @@ Quick Start
 
         PORT=3000
 
-
     Make sure, you also modify the GCLOUD_PROJECT variable, to the name of your Google Cloud project.
     Make sure, you refer to the Google Cloud service account JSON key, in GCLOUD_KEY_FILE, in case you want
     to run this demo on your local machine. In case you deploy it on a VM in GCP, it should work without it.
+    In that case, you can nano into the **/lib/bigQuery.js** and **/lib/ml.js** and disable the following lines:
 
-    The **TWITTER_SEARCH_TERMS** variable contains the Twitter strings and hashtags you are scraping.
+    .. code:: javascript
+        
+        const bq = require('@google-cloud/bigquery')({
+            projectId: process.env.GCLOUD_PROJECT,
+            //keyFilename: process.env.GCLOUD_KEY_FILE
+        });
+
+        const language = require('@google-cloud/language')({
+            projectId: process.env.GCLOUD_PROJECT,
+            //keyFilename: process.env.GCLOUD_KEY_FILE
+        });
+
+        const translate = require('@google-cloud/translate')({
+            projectId: process.env.GCLOUD_PROJECT,
+            //keyFilename: process.env.GCLOUD_KEY_FILE
+        });  
+
+    The **TWITTER_SEARCH_TERMS** variable in **.env** contains the Twitter strings and hashtags you are scraping.
     It needs to be comma seperated, for example: TWITTER_QUERY=query1,hashtag1,query2,query3
     since *lib/twitter.js* reads it like:
 
