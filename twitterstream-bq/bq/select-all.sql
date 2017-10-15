@@ -1,2 +1,2 @@
-SELECT text, score
-FROM mydataset.mytable
+SELECT mytable.from, text, lang, translation, organizations, score, magnitude
+FROM mydataset.mytable;

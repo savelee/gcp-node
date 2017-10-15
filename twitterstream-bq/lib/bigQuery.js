@@ -1,13 +1,10 @@
 //require the google-cloud npm package
 //setup the API keyfile, so your local environment can
 //talk to the Google Cloud Platform
-const gcloud = require('google-cloud')({
+const bq = require('@google-cloud/bigquery')({
   projectId: process.env.GCLOUD_PROJECT,
   keyFilename: process.env.GCLOUD_KEY_FILE
 });
-
-//We will make use of the bigquery() API
-const bq = gcloud.bigquery();
 
 //Make use of a dataset called: mydataset
 const dataset = bq.dataset('mydataset');
@@ -28,7 +25,7 @@ dataset.exists(function(err, exists) {
         if(!exists){
           table.create({
             id: 'mytable',
-            schema: 'TEXT, CREATED:TIMESTAMP, COORDINATES, SCORE:FLOAT:, MAGNITUDE:FLOAT, HASHTAGS'
+            schema: 'TEXT, TRANSLATION, LANG, CREATED:TIMESTAMP, FROM, FROMID, COORDINATES, SCORE:FLOAT, MAGNITUDE:FLOAT, ORGANIZATIONS, PERSONS, GOODS, HASHTAGS'
           }).then(function(data) {
             console.log("table created");
           });
@@ -45,7 +42,7 @@ table.exists(function(err, exists) {
   if(!exists){
     table.create({
       id: 'mytable',
-      schema: 'TEXT, CREATED:TIMESTAMP, COORDINATES, SCORE:FLOAT:, MAGNITUDE:FLOAT, HASHTAGS'
+      schema: 'TEXT, TRANSLATION, LANG, CREATED:TIMESTAMP, FROM, FROMID, COORDINATES, SCORE:FLOAT, MAGNITUDE:FLOAT, ORGANIZATIONS, PERSONS, GOODS, HASHTAGS'
     }).then(function(data) {
       console.log("table created");
     });
