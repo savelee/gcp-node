@@ -10,8 +10,6 @@ if the image will standout enough on the website.
 Quick Start
 -------------------------------------------------------------------------------
 
-TODO
-
 #. (Optional) In case you want to run this script on a VM. 
 
     You will need to install Node.js on the VM. The VM can be a micro instance. 
@@ -76,7 +74,9 @@ TODO
         $ mv env.txt .env
         $ nano .env
 
-    File contents:
+
+File contents:
+
 
     .. code-block:: bash
 
@@ -89,17 +89,18 @@ TODO
         SETTINGS_SCREENSHOT_RESOLUTION=800x600
 
         PORT=3000
+    
 
-    Make sure, you also modify the GCLOUD_PROJECT variable, to the name of your Google Cloud project.
-    Make sure, you refer to the Google Cloud service account JSON key, in GCLOUD_KEY_FILE, in case you want
-    to run this demo on your local machine. 
-    
-    There are some additional settings in the *.env* file, which can help you by
-    setting a maximum amount of colors to detect per uploaded image. The most dominant
-    color can have an extra weight set. (1 extra weight, default).
-    
-    In case you deploy it on a VM in GCP, it should work without it.
-    In that case, you can nano into **/lib/ml.js** and disable the following lines:
+#. Make sure, you also modify the GCLOUD_PROJECT variable, to the name of your Google Cloud project.
+Make sure, you refer to the Google Cloud service account JSON key, in GCLOUD_KEY_FILE, in case you want
+to run this demo on your local machine. 
+
+There are some additional settings in the *.env* file, which can help you by
+setting a maximum amount of colors to detect per uploaded image. The most dominant
+color can have an extra weight set. (1 extra weight, default).
+
+In case you deploy it on a VM in GCP, it should work without it.
+In that case, you can nano into **/lib/ml.js** and disable the following lines:
 
     .. code:: javascript
         
