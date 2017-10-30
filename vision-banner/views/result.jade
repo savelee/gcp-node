@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  
+    div.alert.alert-success #{title}
+
+    table.overview.table
+        thead.thead-inverse
+            tr
+                th.screenshots Screenshots
+                th.banners Banners
+        tbody
+            each screenshot in screenshots
+                tr
+                    td
+                        img(height="500" class='img-thumbnail' src=screenshot.image)
+                        p=screenshot.name
+                        ul(class="colorblock")
+                            each color in screenshot.colors
+                                li
+                                    span.color.badge.badge-pill(style='background: '+ color) &nbsp;
+                        ul(class="tagblock")
+                            each tag in screenshot.tags
+                                li
+                                    span.badge.badge-dark #{tag}
+                    td
+                        each banner in screenshot.banners
+                            .banner
+                                img(class='img-thumbnail banner' src=banner.image)
+                                p=banner.name
+                                span.badge.badge-secondary.score Score: #{banner.score}
+                                ul(class="colorblock")
+                                    each color in banner.colors
+                                        li
+                                            spanspan.color.badge.badge-pill(style='background: '+ color) &nbsp;
+
+    
+
+    

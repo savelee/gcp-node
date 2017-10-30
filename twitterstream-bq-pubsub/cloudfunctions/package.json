@@ -1,0 +1,10 @@
+{
+    "name": "twitterstreambq-pubsub-demo",
+    "version": "1.0.0",
+    "dependencies": {
+      "@google-cloud/bigquery": "^0.9.6",
+      "@google-cloud/language": "^0.12.1",
+      "@google-cloud/translate": "^1.0.0"
+    }
+  }
+  
