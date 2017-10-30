@@ -91,7 +91,7 @@ File contents:
         PORT=3000
     
 
-#. Make sure, you also modify the GCLOUD_PROJECT variable, to the name of your Google Cloud project.
+Make sure, you also modify the GCLOUD_PROJECT variable, to the name of your Google Cloud project.
 Make sure, you refer to the Google Cloud service account JSON key, in GCLOUD_KEY_FILE, in case you want
 to run this demo on your local machine. 
 
