@@ -29,7 +29,7 @@ Controller.prototype.getScreenshots =  function(urls, cb) {
  
     var pageres = new Pageres({delay: 1, timeout: 120});
     for(var i=0; i<=urls.length; i++){
-        pageres.src(urls[i], [RESOLUTION]);
+        pageres.src(urls[i], [RESOLUTION], {crop: true});
     }
     pageres.dest(tempFolder).run().then(function(res){
         for(var i=1; i<=res.length; i++){
@@ -65,6 +65,7 @@ Controller.prototype.uploadToBucket = function(paths, cb){
 }
 
 Controller.prototype.detectVision = function(paths, res){
+    console.log(paths);
     var me = this;
     var requests = [];
     for(var i = 0; i<paths.length; i++){
@@ -123,7 +124,7 @@ Controller.prototype.detectVision = function(paths, res){
                 //give the most dominant color some extra weight
                 if(EXTRA_WEIGHT && z == 0) {
                     for(var o=0; o<EXTRA_WEIGHT; o++){
-                        console.log("extra weight");
+                        //console.log("extra weight");
                         rgbs.push(rgb);
                     }
                 }
@@ -138,7 +139,7 @@ Controller.prototype.detectVision = function(paths, res){
             var imageUri = requests[x].image.source.gcsImageUri;
 
             //is this a screenshot or a banner?
-            if(imageUri.indexOf('-' + RESOLUTION + '.png') == -1){
+            if(imageUri.indexOf('-' + RESOLUTION + '-cropped.png') == -1){
                 var banner = {
                     colors: rgbs,
                     score: 0,
@@ -154,7 +155,7 @@ Controller.prototype.detectVision = function(paths, res){
                     tags: tags
                 };
 
-                imageUri = imageUri.split('-' + RESOLUTION + '.png')[0];
+                imageUri = imageUri.split('-' + RESOLUTION + '-cropped.png')[0];
                 screenshot.name = imageUri.split("gs://"+bucketName+"/")[1];
 
                 screenshots.push(screenshot);
@@ -177,21 +178,23 @@ Controller.prototype.detectVision = function(paths, res){
                 };
             
                 console.log("  " + b.name);
-
+                
                 //for every banner, loop through all the colors
                 for(var y=0; y<banners[z].colors.length; y++){
+                    console.log("color: "  + banners[z].colors[y]);
                     var col = rgbHex(banners[z].colors[y]);
                     var screenCol = rgbHex(screenshots[i].colors[y]);
                     totalscore = totalscore + ColorDiff.compare(col, screenCol);
-                    
+                
                     //console.log("      " + ColorDiff.compare(col, screenCol));
                 }
-
                 console.log("[totalscore] " + Math.round(totalscore/banners[z].colors.length));     
+            
                 b.score = Math.round(totalscore/banners[z].colors.length);
                 screenshots[i].banners.push(b);
                 arraySort(screenshots[i].banners, 'score');
                 screenshots[i].banners.reverse();
+                
             }
         } 
 

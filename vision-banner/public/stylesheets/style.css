@@ -7,6 +7,10 @@ h1, .score {
   margin-bottom: 20px;
 }
 
+textarea {
+  font-size: 2rem !important;
+}
+
 .inside {
   margin: 15px;
 }
@@ -22,7 +26,7 @@ td, th {
 }
 
 .img-thumbnail.banner {
-  max-width: 400px;
+  max-width: 350px;
 }
 
 

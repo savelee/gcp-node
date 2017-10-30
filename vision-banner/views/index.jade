@@ -6,11 +6,11 @@ block content
     form(action="/do", enctype="multipart/form-data", method="POST")
       div.form-group.url
         fieldset:id
-          label(for='url',class='bmd-label-floating') URL 
-          textarea(id="url" class='form-control' name="url" rows="6", cols="66")
+          label(for='url',class='bmd-label-floating') URLs, seperate with ; 
+          textarea(id="url" class='form-control' name="url" rows="6", cols="66") developers.googleblog.com;netflix.com;leeboonstra.com
       div.form-group.banner
         fieldset:id
-          label(for='banner',class='bmd-label-floating') Banner 
+          label(for='banner',class='bmd-label-floating') Upload banners 
           input(type="file",class='form-control',name="banners" multiple)
       div.login
         button(type='submit',class='btn btn-lg btn-outline-primary btn-primary') Submit
