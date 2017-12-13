@@ -22,10 +22,9 @@ This directory contains samples for Google Cloud API.
     Enter an unique project name. For example: *yourname-examples*.
     It will take a few minutes till everything is ready.
 
-1. Activate the Project with the gcloud command-line tools:
+1. Initialize the Cloud SDK.:
     
-    .. code-block:: bash
-    
+
         $ gcloud init
         2 (Create a new configuration)
         yourname-examples
@@ -41,20 +40,12 @@ which means you do not have to change the code to authenticate as long as
 your environment has credentials. You have a few options for setting up
 authentication:
 
-1.  Initialize the Cloud SDK.
-
-        gcloud init
-
 1. When running locally, use the `Google Cloud SDK`
-
-    .. code-block:: bash
 
         gcloud auth application-default login
 
 
     Note that this command generates credentials for client libraries. To authenticate the CLI itself, use:
-
-    .. code-block:: bash
     
         gcloud auth login
 
@@ -66,8 +57,6 @@ authentication:
    authenticate to Google Cloud Platform services from any environment. To use
    the file, set the ``GOOGLE_APPLICATION_CREDENTIALS`` environment variable to
    the path to the key file, for example:
-
-    .. code-block:: bash
 
         export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_account.json
 
