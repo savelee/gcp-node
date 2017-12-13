@@ -67,9 +67,9 @@ authentication:
 
 ### Install Dependencies
 
-1. Install `node` and `npm` if you do not already have them.
+1. Install [Node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm) if you do not already have them.
 
-1. See the `readme.md` file for descriptions on how to run each example.
+1. See the `readme.txt` file for descriptions on how to run each example.
 
 
 ## Contributing changes
