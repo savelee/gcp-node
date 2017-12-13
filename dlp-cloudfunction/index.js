@@ -1,12 +1,16 @@
+require('dotenv').config();
+
 // Imports the Google Cloud Data Loss Prevention library
 const DLP = require('@google-cloud/dlp');
 
 // Instantiates a client
-const dlp = DLP();
-
+const dlp = DLP({
+    projectId: process.env.GCLOUD_PROJECT,
+    keyFilename: process.env.GCLOUD_KEY_FILE 
+});
 
 // The string to inspect
-const string = 'My name is Lee and my email is leeboonstra@gmail.com. This is my ip: 46.139.108.120';
+const string = 'My name is Lee and my email is leeboonstra@gmail.com. This is my ip: 46.139.108.120. I am from GERMANY Deutschland and here is my reisepasse C234FGHJK2';
 // The path to a local file to inspect. Can be a text, JPG, or PNG file.
 //const fileName = 'path/to/image.png';
 
@@ -15,7 +19,12 @@ const minLikelihood = 'LIKELIHOOD_UNSPECIFIED';
 // The maximum number of findings to report (0 = server maximum)
 const maxFindings = 0;
 // The infoTypes of information to match
-const infoTypes = [{ name: 'EMAIL_ADDRESS' }, { name: 'IP_ADDRESS'}];
+const infoTypes = [
+    { name: 'EMAIL_ADDRESS' }, 
+    { name: 'IP_ADDRESS'},
+    { name: 'GERMANY_PASSPORT'}
+
+];
 // Whether to include the matching string
 const includeQuote = true;
 

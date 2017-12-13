@@ -68,7 +68,7 @@ binaryServer.on('connection', function(client) {
 
   var fileWriter = new wav.FileWriter(outFile, {
     channels: 2,
-    sampleRate: 41000, //48000
+    sampleRate: 44100, //48000
     bitDepth: 16
   });
 
@@ -81,7 +81,7 @@ binaryServer.on('connection', function(client) {
     const request = {
       config: {
         encoding: 'LINEAR16',
-        sampleRateHertz: 41000, //48000
+        sampleRateHertz: 44100, //48000
         languageCode: 'en-US'
         //languageCode: 'nl-NL'
       }

@@ -52,7 +52,6 @@ var createNiceNumber = function(num){
   return x;
 };
 
-/*
 //FILTER TWEETS
 var getAllMatches = function(text) { 
     var matches = [];
@@ -79,8 +78,8 @@ var getAllMatches = function(text) {
 var getMatches = function(tweettxt){
   var matches = getAllMatches(tweettxt);
   return matches;
-}
-*/
+};
+
 
 var openTwitterStream = function(){
 
@@ -127,7 +126,7 @@ var openTwitterStream = function(){
 
                 //let's normalize the data as much on the JS side.
                 //get the matches, based on this clean tweet.
-                //var matches = getMatches(tweet.text);
+                var matches = getMatches(tweet.text);
 
                 //console.log("THE LANGUAGE OF THIS TWEET = " + lang);
                 //console.log(tweet.lang);

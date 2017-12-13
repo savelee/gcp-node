@@ -64,3 +64,17 @@ Quick Start
     Visit the page in the browser, to inspect or redact your data.
 
 
+#. In case you like to try it out on a local cloud functions emulator install:
+
+    `sudo npm install -g @google-cloud/functions-emulator`
+
+    Then run the emulator: `sudo functions start` (or stop or kill)
+
+    And deploy as how you usually would: `functions deploy inspect --trigger-http` but the file needs to be called index.js
+
+    https://cloud.google.com/functions/docs/emulator
+
+    You need to have an .env file in your root, which points to a service account key, and it needs to be enabled in index.js.
+
+
+

@@ -1,0 +1,26 @@
+//FIELD: TYPE OF SPORT
+CASE
+
+  WHEN REGEXP_MATCH(TEXT, "((?i).*voetbal).*") OR REGEXP_MATCH(TEXT, "((?i).*soccer).*")
+  THEN "soccer"
+
+  WHEN REGEXP_MATCH(TEXT, "((?i).*tennis).*")
+  THEN "tennis"
+
+  WHEN REGEXP_MATCH(TEXT, "((?i).*basketball).*") OR REGEXP_MATCH(TEXT, "((?i).*nba).*")
+  THEN "basketball"
+
+  WHEN REGEXP_MATCH(TEXT, "((?i).*football).*") OR REGEXP_MATCH(TEXT, "((?i).*nfl).*")
+  THEN "football"
+
+  WHEN REGEXP_MATCH(TEXT, "((?i).*baseball).*") OR REGEXP_MATCH(TEXT, "((?i).*mlb).*")
+  THEN "baseball"
+
+  WHEN REGEXP_MATCH(TEXT, "((?i).*biking).*") OR REGEXP_MATCH(TEXT, "((?i).*wielrennen).*")
+  THEN "biking"
+
+  WHEN REGEXP_MATCH(TEXT, "((?i).*formule 1).*") OR REGEXP_MATCH(TEXT, "((?i).*racing).*")
+  THEN "racing"
+
+  ELSE "" 
+END
