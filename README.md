@@ -60,9 +60,9 @@ authentication:
 
         export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service_account.json
 
-[Application Default Credentials]( https://cloud.google.com/docs/authentication#getting_credentials_for_server-centric_flow)
-[Additional scopes] (https://cloud.google.com/compute/docs/authentication#using)
-[Service Account key file]( https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount)
+* [Application Default Credentials]( https://cloud.google.com/docs/authentication#getting_credentials_for_server-centric_flow)
+* [Additional scopes] (https://cloud.google.com/compute/docs/authentication#using)
+* [Service Account key file]( https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount)
 
 
 ### Install Dependencies
