@@ -2,7 +2,7 @@
 
 This directory contains samples for Google Cloud Platform and API.
 
-**Note: This is not an officially supported Google product.**
+**Disclaimer: This is not an officially supported Google product. Written code can be used as a baseline, it's not meant for production usage.**
 
 
 ### Setup
