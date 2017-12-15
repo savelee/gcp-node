@@ -1,6 +1,8 @@
-## Google Cloud Node.js Samples by Lee Boonstra
+## Google Cloud Node.js Customer Engineering Examples
 
-This directory contains samples for Google Cloud API. 
+This directory contains samples for Google Cloud Platform and API.
+
+**Note: This is not an officially supported Google product.**
 
 
 ### Setup
