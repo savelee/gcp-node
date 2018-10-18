@@ -1,0 +1,15 @@
+{
+    "name": "my-tvguide-agent",
+    "description": "Build the TV Guide agent for Google Assistant with Dialogflow",
+    "version": "1.0.0",
+    "license": "Apache-2.0",
+    "author": "Lee Boonstra",
+    "engines": {
+        "node": "^6.11.5"
+    },
+    "dependencies": {
+        "request-promise": "^4.2.2",
+        //"actions-on-google": "^2.0.1",
+        "dialogflow-fulfillment": "0.3.0-beta.3"
+    }
+}

@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    div.container-fluid.main
+      nav.navbar.navbar-dark.bg-primary
+        a.navbar-brand(href='/') MachineLearning Vision Demo
+
+      div.row.inside
+        block content

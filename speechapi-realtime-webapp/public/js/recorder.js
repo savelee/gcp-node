@@ -1,15 +1,18 @@
 (function(window) {
-  var client = new BinaryClient('ws://localhost:9001');
+  var client = new BinaryClient('ws://localhost:9002');
 
   function typeInTextarea(el, newText) {
-    var start = el.selectionStart
-    var end = el.selectionEnd
-    var text = el.value
-    var before = text.substring(0, start)
-    var after  = text.substring(end, text.length)
-    el.value = (before + newText + after)
-    el.selectionStart = el.selectionEnd = start + newText.length
-    el.focus()
+    console.log(newText);
+  
+    var start = el.selectionStart;
+    var end = el.selectionEnd;
+    var text = el.value;
+    var before = text.substring(0, start);
+    var after  = text.substring(end, text.length);
+    el.value = (before + newText + after);
+  
+    el.selectionStart = el.selectionEnd = start + newText.length;
+    el.focus();
   }
 
   client.on('stream', function(stream, meta){    
@@ -21,9 +24,7 @@
       var s = document.getElementsByClassName('screener')[0];
       typeInTextarea(t, data.msg);
 
-      if(data.sentiment < 0.5)
-        s.className += ' red';
-
+      s.className = "screener " + data.color;
     });
   });
 
@@ -48,6 +49,7 @@
     }
 
     window.stopRecording = function() {
+      console.log("stop");
       recording = false;
       window.Stream.end();
     }

@@ -61,7 +61,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-binaryServer = BinaryServer({port: 9001});
+binaryServer = BinaryServer({port: 9002});
 
 binaryServer.on('connection', function(client) {
   console.log('new connection');
@@ -120,38 +120,31 @@ binaryServer.on('connection', function(client) {
 
         //if sentiment is < 0.5 than red
 
-        console.log(data.results && data.results[0].alternatives);
+        //console.log(data.results && data.results[0].alternatives);
 
         obj = {
           msg: data.results[0].alternatives[0].transcript,
         };
 
-        console.log(data.results[0]);
+        //console.log(data.results[0]);
 
-        console.log(obj.msg);
-      }
-    });
-
-    stream.pipe(fileWriter);
-    stream.pipe(recognizeStream);
-
-    stream.on('end', function(data) {
-      fileWriter.end();
-      console.log(data);
-      console.log('wrote to file ' + outFile);
+      console.log(obj.msg);
+      //client.send(obj);
 
       //MAKE A CALL TO SENTIMENT
-      client.send(obj);
-
-      /*const document = nlp.document({ content: obj.msg });
+      const document = nlp.document({ content: obj.msg });
       document.detectSentiment().then(function(data) {
         var sentiment = data[0];
         var apiResponse = data[1];
 
         console.log(sentiment, apiResponse);
-
-        obj.color = "red";
+        if(sentiment.score <= 0){
+          obj.color = "red";
+        } else {
+          obj.color = "";
+        }
         obj.sentiment = sentiment.score;
+
 
         client.send(obj);
       }).catch((err) => {
@@ -160,8 +153,17 @@ binaryServer.on('connection', function(client) {
         obj.sentiment = 1;
 
         client.send(obj);    
-      });*/
+      });
 
+      }
+    });
+
+    stream.pipe(fileWriter);
+    stream.pipe(recognizeStream);
+
+    stream.on('end', function(data) {
+      fileWriter.end();
+      console.log('wrote to file ' + outFile);
     });
   });
 });

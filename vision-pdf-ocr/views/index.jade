@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  
+  div.col
+    form(action="/do", enctype="multipart/form-data", method="POST")
+      div.form-group.banner
+        fieldset:id
+          label(for='banner',class='bmd-label-floating') Upload PDF 
+          input(type="file",class='form-control',name="banners" multiple)
+      div.submit
+        button(type='submit',class='btn btn-lg btn-outline-primary btn-primary') Submit
+
+
+    
